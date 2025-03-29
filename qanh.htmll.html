@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Ty Đấu Thầu Xây Dựng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style> 
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/construction-bg.jpg') no-repeat center center/cover;
+    height: 300px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Section Styling */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Project Section */
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Contact Section */
+.contact-info {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}</style>
+    <header>
+        <div class="logo">
+            <h1>Công Ty Xây Dựng ABC</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Giới Thiệu</a></li>
+                <li><a href="#services">Dịch Vụ</a></li>
+                <li><a href="#projects">Dự Án</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Nhà thầu uy tín - Chất lượng hàng đầu</h2>
+        <p>Chuyên nhận thầu các công trình xây dựng lớn nhỏ trên toàn quốc</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Về Chúng Tôi</h2>
+        <p>Công Ty Xây Dựng ABC là đơn vị hàng đầu trong lĩnh vực đấu thầu xây dựng, chuyên cung cấp các giải pháp tối ưu và hiệu quả.</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Dịch Vụ</h2>
+        <ul>
+            <li>Thi công công trình dân dụng</li>
+            <li>Thi công công trình công nghiệp</li>
+            <li>Thiết kế và tư vấn xây dựng</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Dự Án Tiêu Biểu</h2>
+        <div class="project-list">
+            <div class="project">
+                <img src="images/project1.jpg" alt="Dự án 1">
+                <p>Dự án Nhà máy XYZ</p>
+            </div>
+            <div class="project">
+                <img src="images/project2.jpg" alt="Dự án 2">
+                <p>Khu đô thị ABC</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Liên Hệ</h2>
+        <div class="contact-info">
+            <p><strong>Địa chỉ:</strong> 123 Đường Nguyễn Văn A, Quận 1, TP. Hồ Chí Minh</p>
+            <p><strong>Điện thoại:</strong> 0123 456 789</p>
+            <p><strong>Email:</strong> contact@xaydungabc.com</p>
+            <p><strong>Website:</strong> www.xaydungabc.com</p>
+        </div>
+        
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Họ và Tên" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Nội dung" required></textarea>
+            <button type="submit">Gửi</button>
+        </form>
+        <p id="responseMessage"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Công Ty Xây Dựng ABC. All Rights Reserved.</p>
+    </footer>
+<document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+    
+    if (name && email && message) {
+        document.getElementById('responseMessage').innerText = "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm.";
+        this.reset();
+    } else {
+        document.getElementById('responseMessage').innerText = "Vui lòng điền đầy đủ thông tin.";
+    }
+});
+    <script src="script.js"></script>
+</body>
+</html>
